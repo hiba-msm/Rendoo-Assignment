@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import Link from 'next/link';
+
 import { Sparkles, MapPin, Award, Users, Clock, Compass, Check } from 'lucide-react';
 import { MatchInsight } from '../types/activity';
 import { cn } from '../utils/cn';

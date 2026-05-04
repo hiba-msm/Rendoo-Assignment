@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import Link from 'next/link';
+
 import { MapPin, Star, Heart, Share, ArrowLeft } from 'lucide-react';
 import { Activity } from '../types/activity';
 import { cn } from '../utils/cn';

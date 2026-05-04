@@ -74,6 +74,8 @@ npm run dev
 
 ## Build Check
 
+To verify the production build, run:
+
 ```bash
 npm run build
 ```
