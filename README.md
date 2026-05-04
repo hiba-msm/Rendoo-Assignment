@@ -71,3 +71,9 @@ Install dependencies:
 npm install 
 npm run dev
 ```
+
+## Build Check
+
+```bash
+npm run build
+```

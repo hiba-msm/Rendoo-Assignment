@@ -13,7 +13,11 @@ interface SmartMatchInsightProps {
 export function SmartMatchInsight({ insight }: SmartMatchInsightProps) {
   const [activePreferences, setActivePreferences] = useState<string[]>(insight.preferences);
 
-  // togglePreference removed as chips now redirect to Coming Soon
+  const togglePreference = (pref: string) => {
+    setActivePreferences((prev) =>
+      prev.includes(pref) ? prev.filter((p) => p !== pref) : [...prev, pref]
+    );
+  };
 
 
   return (
@@ -72,9 +76,10 @@ export function SmartMatchInsight({ insight }: SmartMatchInsightProps) {
             {insight.preferences.map((pref) => {
               const isActive = activePreferences.includes(pref);
               return (
-                <Link
+                <button
                   key={pref}
-                  href="/coming-soon"
+                  type="button"
+                  onClick={() => togglePreference(pref)}
                   className={cn(
                     "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold transition-all duration-200 border",
                     isActive 
@@ -84,7 +89,7 @@ export function SmartMatchInsight({ insight }: SmartMatchInsightProps) {
                 >
                   {isActive && <Check size={10} strokeWidth={3} />}
                   {pref}
-                </Link>
+                </button>
               );
             })}
           </div>

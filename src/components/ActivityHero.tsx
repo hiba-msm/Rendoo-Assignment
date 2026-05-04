@@ -12,7 +12,7 @@ interface ActivityHeroProps {
 }
 
 export function ActivityHero({ activity, onClose }: ActivityHeroProps) {
-  const [isFavorite] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   return (
     <div className="relative w-full h-[350px] md:absolute md:inset-0 md:h-auto">
@@ -32,20 +32,21 @@ export function ActivityHero({ activity, onClose }: ActivityHeroProps) {
           <ArrowLeft size={20} />
         </button>
         <div className="flex gap-2">
-          <Link 
-            href="/coming-soon"
+          <button 
+            type="button"
             className="p-2 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/30 transition-colors" 
             aria-label="Partager"
           >
             <Share size={20} />
-          </Link>
-          <Link 
-            href="/coming-soon"
+          </button>
+          <button 
+            type="button"
+            onClick={() => setIsFavorite((prev) => !prev)}
             className="p-2 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/30 transition-colors"
             aria-label="Ajouter aux favoris"
           >
             <Heart size={20} className={cn(isFavorite && "fill-red-500 text-red-500")} />
-          </Link>
+          </button>
         </div>
       </div>
 

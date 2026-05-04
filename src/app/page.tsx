@@ -29,16 +29,16 @@ export default function Home() {
           </Link>
 
           <div className="hidden md:flex flex-1 max-w-md mx-6">
-            <Link href="/coming-soon" className="relative w-full">
+            <button type="button" className="relative w-full text-left cursor-default">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
               <div className="w-full bg-slate-100 rounded-full py-2.5 pl-10 pr-4 text-sm text-slate-400">
                 Rechercher une activité...
               </div>
-            </Link>
+            </button>
           </div>
-          <Link href="/coming-soon" className="p-2 text-slate-600 hover:bg-slate-100 rounded-full transition-colors">
+          <button type="button" className="p-2 text-slate-600 hover:bg-slate-100 rounded-full transition-colors cursor-default">
             <Menu size={24} />
-          </Link>
+          </button>
         </div>
       </header>
 
@@ -46,14 +46,14 @@ export default function Home() {
         {/* Fake Categories */}
         <div className="flex gap-3 overflow-x-auto pb-4 no-scrollbar">
           {["Tout", "Sea", "Sport", "Nature", "Art", "Food"].map((cat, i) => (
-            <Link
+            <button
               key={cat}
-              href="/coming-soon"
+              type="button"
               className={`px-5 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${i === 1 ? "bg-[#1b2063] text-white" : "bg-white text-slate-600 border border-slate-200 hover:border-slate-300"
-                }`}
+                } cursor-default`}
             >
               {cat}
-            </Link>
+            </button>
           ))}
         </div>
 
